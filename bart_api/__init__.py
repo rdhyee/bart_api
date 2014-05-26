@@ -136,7 +136,7 @@ class BartApi():
     return xml_dict
   
   def get_station_schedule(self, station):
-    xml = self.get_xml("http://api.bart.gov/api/stn.aspx?cmd=stnsched&orig=%s&key=%s" % (station,self.api_key))
+    xml = self.get_xml("http://api.bart.gov/api/sched.aspx?cmd=stnsched&orig=%s&key=%s" % (station,self.api_key))
     raw_schedules = xml.findall('.//item')
     schedule_list = []
     for item in raw_schedules:
